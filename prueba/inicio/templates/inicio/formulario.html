@@ -1,5 +1,14 @@
 {% extends "inicio/encabezado.html" %} 
+
 {% block titulo %} Formulario {% endblock titulo %} 
+
+{% block imagen %}
+	{% load static %}
+	{% static "inicio/images/registrar.png" %}
+{% endblock %}
+
+{% block nombreApartado %}Registro{% endblock  %}
+
 {% block contenido %}
 		<!-- Contenido Principal-->
     <div class="page-content">

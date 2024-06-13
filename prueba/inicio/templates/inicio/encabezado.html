@@ -58,6 +58,16 @@
 
 		<!-- Barra de menú -->
 		<div class="sidebar">
+			<!--Imagen de Usuario-->
+			<div class="user-menu dropdown">
+				<a href="#">
+					<img src="{% block imagen %}{% endblock %}">
+					<div class="user-info">
+						{% block nombreApartado %}{% endblock %} <span>DSM</span>
+					</div>
+				</a>
+			</div>
+			<!--/Imagen de Usuario-->
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
