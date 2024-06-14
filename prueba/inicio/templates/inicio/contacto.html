@@ -1,4 +1,4 @@
-{% extends "inicio/encabezado.html" %}
+{% extends "inicio/layout.html" %}
 
 {% block titulo %} CONTACTO{% endblock%}
 
@@ -9,23 +9,11 @@
 
 {% block nombreApartado %}Contacto{% endblock  %}
 
+{% block tituloApartado %}Contáctanos{% endblock %}
+
+{% block descripcion %}Ingresa tus datos{% endblock %}
+
 {% block contenido %}
-		<!-- Contenido Principal-->
-        <div class="page-content">
-
-
-			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Contáctanos
-				    <small>Ingresa tus datos</small></h3>
-				</div>
-
-				
-				
-			</div>
-			<!-- /Encabezado-->
-
 			<!-- Formulario -->
 			<form class="form-horizontal" action="#" role="form">
 	            <div class="panel panel-default">
@@ -53,7 +41,4 @@
 				</div>
 			</form>
 		<!-- Fin del Formulario -->
-		 <!--Comentario de prueba para GitHub 02-->
-		</div>
-		<!-- /Contenido Principal-->
 {% endblock contenido%}

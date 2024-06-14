@@ -1,4 +1,4 @@
-{% extends "inicio/encabezado.html" %} 
+{% extends "inicio/layout.html" %} 
 
 {% block titulo %} Formulario {% endblock titulo %} 
 
@@ -9,23 +9,11 @@
 
 {% block nombreApartado %}Registro{% endblock  %}
 
+{% block tituloApartado %}Registro{% endblock %}
+
+{% block descripcion %}Ingresa tu información{% endblock %}
+
 {% block contenido %}
-		<!-- Contenido Principal-->
-    <div class="page-content">
-
-
-			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Registro
-				    <small>Ingresa tu información</small></h3>
-				</div>
-
-				
-				
-			</div>
-			<!-- /Encabezado-->
-
 			<!-- Formulario -->
 			<form class="form-horizontal" action="#" role="form">
 	            <div class="panel panel-default">
@@ -71,6 +59,4 @@
 				</div>
 			</form>
 		<!-- Fin del Formulario -->
-		</div>
-		<!-- /Contenido Principal-->
 {% endblock contenido %}

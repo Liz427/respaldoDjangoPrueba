@@ -50,12 +50,7 @@
 </head>
 
 <body>
-
-	
-
  	<div class="page-container">
-
-
 		<!-- Barra de menú -->
 		<div class="sidebar">
 			<!--Imagen de Usuario-->
@@ -78,13 +73,42 @@
 				<!-- /Fin menú -->
 			</div>
 		</div>
-		<!-- /sidebar -->
+		<!-- Contenido Principal-->
+		<div class="page-content">
+			<!--Encabezdo -->
+				<div class="page-header">
+					<div class="page-title">
+						<h3>{% block tituloApartado %}{% endblock %}
+						<small>{% block descripcion %}{% endblock  %} </small></h3>
+					</div>
+				</div>
+			<!-- /Encabezado-->
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<a href="{% url "Principal" %}">
+						{% if request.path == '/' %}
+							Principal
+						{% else %}
+							Principal{{request.path}}
+						{% endif %}
+					</a>
+				</ul>
+			</div>
 		     <!--CONTENIDO-->
-			 {% block contenido %}
-			 <!--Template Tag-->
-			 <!--block sirve para indicar que colocaremos un bloque de contenido 
-			 a través de nuestra variable content-->
-			 {% endblock %}
+			
+			<!--Encabezdo -->
+			<div class="page-header">
+				{% block contenido %}
+				<!--Template Tag-->
+				<!--block sirve para indicar que colocaremos un bloque de contenido 
+				a través de nuestra variable content-->
+				{% endblock %}
+				<!--Barra de Navegación-->
+				
+			</div>
+			<!--/Barra de Navegación-->
+		</div>
+		<!-- /Contenido Principal-->
 	</div>
 </body>
 </html>
