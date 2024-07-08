@@ -18,13 +18,21 @@ from django.contrib import admin
 from django.urls import path
 from inicio import views
 from django.conf import settings
+from registros import views as views_registros
+#importamos la nueva vista de app registros para asignar las rutas de acceso a sus vistas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.principal, name = 'Principal'),
-    path('contacto/', views.contacto, name = 'Contacto'),
+    #indicamos que ahora la ruta de principal.html se encuentra 
+    path('', views_registros.registros, name = 'Principal'),
+    path('contacto/', views_registros.contacto, name = 'Contacto'),
     path('formulario/', views.formulario, name = 'Formulario'),
-    path('ejemplo', views.ejemplo, name='Ejemplo')
+    path('ejemplo', views.ejemplo, name='Ejemplo'),
+    path('registrar', views_registros.registrar, name='Registrar'),
+    path('consultarComentario/', views_registros.consultarComentario, name='ConsultarComentario'),
+    path('eliminarComentario/<int:id>', views_registros.eliminarComentarioContacto, name='Eliminar'),
+    path('formEditarComentario/<int:id>', views_registros.consultarComentarioIndividual, name='ConsultaIndividual'),
+    path('editarComentario/<int:id>', views_registros.editarComentarioContacto, name='Editar')
 ]
 
 if settings.DEBUG:
