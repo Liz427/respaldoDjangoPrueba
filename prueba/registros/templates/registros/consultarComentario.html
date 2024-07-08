@@ -1,0 +1,43 @@
+{% extends "inicio/layout.html" %}
+
+{% block titulo %} Consultar Comentarios{% endblock%}
+
+{% block imagen %}
+	{% load static %}
+	{% static "inicio/images/contactar.png" %}
+{% endblock %}
+
+{% block nombreApartado %}Consultar Comentarios{% endblock  %}
+
+{% block tituloApartado %}Consulta de Comentarios{% endblock %}
+
+{% block descripcion %}A continuación, se muestran los comentarios registrados.{% endblock %}
+{% block contenido %}
+
+<!--Tabla de Comentarios-->
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Usuario</th>
+			<th>Mensaje</th>
+			<th></th>
+            <th></th>
+		</tr>
+	</thead>
+	<tbody>
+        {% for comentario in comentarios %}
+            <tr>
+                <td class="text-semibold">{{comentario.usuario}}</td>
+                <td class="muted">{{comentario.mensaje}}</td>
+                <td class="muted text-center">
+					<a href="{% url 'ConsultaIndividual' comentario.id %}">Editar</a>
+				</td>
+                <td class="muted text-center">
+					<a  href="{% url 'Eliminar' comentario.id %}">Eliminar</a>
+				</td>
+            </tr>
+        {% endfor %}
+	</tbody>
+</table>
+
+{% endblock contenido%}
