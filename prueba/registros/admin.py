@@ -9,6 +9,19 @@ class AdministrarModelo(admin.ModelAdmin):
     search_fields = ('matricula', 'nombre', 'carrera', 'turno', 'imagen')
     date_hierarchy = 'created'
     list_filter = ('carrera', 'turno')
+    list_per_page=2
+    list_display_links=('matricula','nombre')
+    list_editable=('turno',)
+
+    def get_readonly_fields(self, request, obj=None):
+        #si el usuario pertenece al grupo de permisos "Usuario"
+        if request.user.groups.filter(name="Usuarios").exists():
+            #bloquea los campos
+            return('matricula', 'carrera', 'turno')
+            #cualquier otro usuario que no pertenece al grupo "Usuario"
+        else:
+            #bloquea los campos
+            return('created', 'updated')
 
 admin.site.register(Alumnos, AdministrarModelo)
 

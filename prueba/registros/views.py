@@ -55,3 +55,21 @@ def editarComentarioContacto(request, id):
         comentarios = ComentarioContacto.objects.all()
         return render(request, 'registros/consultarComentario.html', {'comentarios':comentarios})
     return render(request, 'registros/editarComentario.html', {'comentario', comentario})
+
+#CONSULTAR CON EXPRESIONES
+def consultar1(request):
+    #con una sola condicion
+    alumnos = Alumnos.objects.filter(carrera = "TI")
+    return render(request, "registros/consultas.html", {'9B':alumnos})
+
+def consultar2(request):
+    alumnos = Alumnos.objects.filter(carrera = "TI").filter(turno="Matutino")
+    return render(request, "registros/consultas.html", {'9B':alumnos})
+
+def consultar3(request):
+    alumnos = Alumnos.objects.all().only('matricula', 'nombre', 'carrera', 'turno', 'imagen')
+    return render(request, "registros/consultas.html", {'9B':alumnos})
+
+def consultar4(request):
+    alumnos = Alumnos.objects.filter(turno__contains="Vesp")
+    return render(request, "registros/consultas.html", {'9B':alumnos})
