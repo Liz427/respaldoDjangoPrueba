@@ -10,5 +10,7 @@
   "html.format.contentUnformatted": "pre,code,textarea",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.disableLanguages": ["html"]
+  "prettier.disableLanguages": [
+    "html"
+  ]
 }
